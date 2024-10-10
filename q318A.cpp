@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include "ext/pb_ds/assoc_container.hpp"
-#include "ext/pb_ds/tree_policy.hpp"
 using namespace std;
 #define ll long long
 #define FAST_IO ios_base::sync_with_stdio(false), cin.tie(nullptr), cerr.tie(nullptr)
