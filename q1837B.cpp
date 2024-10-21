@@ -3,32 +3,23 @@ using namespace std;
 
 int check(string s, int n)
 {
-    vector<int> v(n + 1);
-    unordered_map<int, int> m;
+    int cnt = 0;
     int flag = 0;
-    v[0] = flag;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        if (s[i] == '<')
+        if (s[i] == s[i + 1])
         {
-            flag += 1;
+            cnt += 1;
         }
         else
         {
-            flag -= 1;
+            flag = max(cnt, flag);
+            cnt = 0;
         }
-        v[i + 1] = flag;
+        // cnt = max(cnt, flag);
     }
-    int cnt = 0;
-    for (int i = 0; i < n + 1; i++)
-    {
-        m[v[i]]++;
-        if (m[v[i]] == 1)
-        {
-            cnt++;
-        }
-    }
-    return cnt;
+    flag = max(cnt, flag);
+    return flag + 2;
 }
 
 int main()
